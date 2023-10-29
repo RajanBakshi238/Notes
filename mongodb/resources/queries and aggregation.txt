@@ -1,0 +1,124 @@
+show dbs        --> to see list of all databases
+use <name>      --> to switch or create the database
+db.createCollection()       --> to create new collection
+db.getCollectionNames()     --> to get the list of all collections in db
+db.<collection_name>.insertOne(<object>)    --> to insert only one document
+db.<collection_name>.insertMany([<object>, <object>])    --> to insert many document at once
+db.<collection_name>.find()     --> to get list of all documents.
+
+
+
+
+
+
+
+
+
+
+Aggregations :
+-----------------
+
+1. $group: is used to group the multiple documents data
+
+    Eg: 1
+        var pipeline = [
+        {
+            $group: {
+            _id: "randomID",  // here we can use _id name from document properties name also
+            allAges: { $sum: "$age" },
+            minAge: { $min: "$age" },
+            maxAge: { $max: "$age" },
+            avgAge: { $avg: "$age" },
+            },
+        },
+        ];
+
+    Eg: 2
+        var pipeline = [{
+            $group: {
+                _id: "$age",        // by specifying $age property of document we are specifying to make groups on basis of each age
+                avgAge: {$avg: "$age" }
+            }
+        }]
+
+        same eg:-
+            var pipeline = [{
+            $group: {
+                _id: "$age", 
+                avgAge: {$sum: "$age" }   // this will do the sum of all the particular age
+                count: {$sum: 1 }   // this will give the total number of person in this partiular age group
+            }
+        }]
+
+
+2. $match: is used to match the document on the basis of specified document property and return the matched documents
+
+    Eg: 1
+        var pipeline = [{
+            $match: {"age": 23}     // this will return all documents whose age is 23
+        }]
+
+3. $limit: is used to limit the number of documents .
+
+    Eg: 1
+        var pipeline = [{
+            $match: {"age" : {
+                $lte: 23
+            }}
+        }, 
+        {
+            $limit: 1       // here this limit will allow to pass 1 document only.
+        }]
+
+4. $skip: is used to skip the number of documents       
+    Note: skip and limit combination is used for pagination
+
+    Eg: 1
+        var pipeline = [{
+            $match: {"age": {
+                    $lte: 23
+                }
+            }
+        }, 
+        {
+            $skip: 1        // this will skip the first document.
+        }]
+
+5. $unwind: is used to destruct the array and convert that array each value into new document with other value same as above.
+
+    Eg: 1 
+        var pipeline = [{
+            $unwind: "$languages"       // this will break down the languages array into each single value with  each seprate docuemnt
+        },
+        {
+            $match: {languages: /^c/}
+        },
+        {
+            $group: {
+                _id: "$name",
+                favLanguages: {$push: "$languages"}
+            }
+        }]
+
+6. $project: is used to change the name of the fields in a document and select or deselect the fields in the output
+
+    Eg: 1
+        var pipeline = [{
+            $project: {
+                _id: 0,         // this will not allow _id to show in result
+                "Name of user": "$name",    // this will change the field name
+                "Language": "$languages"  // this will change the field name
+            }
+        }]
+
+    Eg: 2 
+        var pipeline = [{
+            $project: {
+                name: 1,        // now only name and page will be shown only i.e languages will not be shown and _id will always be shown if we will not remove it from here
+                age: 1
+            }
+        }]
+
+
+
+=> To execute pipeline: db.getCollection("humanData").aggregate(pipeline)
