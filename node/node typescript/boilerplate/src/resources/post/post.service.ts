@@ -17,6 +17,8 @@ class PostService {
             throw new Error('Unable to create post');
         }
     }
+
+    // public async view 
 }
 
 export default PostService

@@ -37,6 +37,22 @@ class PostController implements Controller {
             // next(new HttpException(400, error.message));
         }
     }
+
+    public delete = async(
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ): Promise<Response | void> => {
+        try{
+            
+            // const post = await 
+        } catch (error){
+            next(new HttpException(400, 'can\'t update post'))
+        }
+    }
+
+
+
 }
 
 export default PostController
