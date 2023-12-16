@@ -1,4 +1,4 @@
-## NEST FLOW
+# NEST FLOW
 
 ```mermaid
 
@@ -169,7 +169,18 @@ export class MessageService{
             a little slower
         ] --> A
         end
-
-        
-
 ```
+
+
+# How dependency injection works ?
+Dependency injection in nest works in container called ***Nest DI(Dependency Injection) Container/Injector***. It stores couple of properties. 
+
+> To understand we can simplify these properties and say that it stores two sets of information. `List of classes and their dependencies`, and `List of that instances i have created.`
+
+**Behind the scenes** a DI container is created for us when we create a new nest application. 
+When our application is started nest is going to take a look at all the different classes that we have created inside the application except the controllers 
+
+![]('./../assets/dependecyInjection.png)
+
+
+![]('./../assets/DI%20container%20flow.png)
