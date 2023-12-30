@@ -183,4 +183,4 @@ When our application is started nest is going to take a look at all the differen
 ![]('./../assets/dependecyInjection.png)
 
 
-![]('./../assets/DI%20container%20flow.png)
+![]('./../assets/DI%20container%20flow.png) 
