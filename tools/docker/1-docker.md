@@ -61,4 +61,12 @@ when we run the comand i.e docker run,  the  docker cli reaches the docker hub a
 >
 >when we turn the image into container, firstly ***kernel*** is going to isolate little section of the hard drive and make it available to this shown container. so now we have chrome and python installed in the conatianer. Then when ***startup command*** is executed which we will invoke the process i.e chrome in our process then that process is isolated for this set of resources inside the container.
 
-536 completed
+
+
+> 
+>***Note***: : Kernel is not available in window or macos so while installation docker in window or mac os linux virtual machine is also downloaded and run while using docker. see the example below: 
+>![alt text](./assets/docker_internals.png)
+
+
+
+537 completed
