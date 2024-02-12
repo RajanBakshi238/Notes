@@ -69,5 +69,15 @@ when we run the comand i.e docker run, the docker cli reaches the docker hub and
 
  ![alt text](./assets/docker_run_cmd.png)
 
+> ### Overriding default commands
+> 
+>![alt text](./assets/overriding_default_cmd.png)
+>
+>eg:
+> ***1. docker run busybox echo hi there***
+>   - This command will override the default behaviour and will print **hi there**
+>
+>***2. docker run busybox ls***
+>   - This command will show the list of files in cmd
 
-538 completed
+539 completed
