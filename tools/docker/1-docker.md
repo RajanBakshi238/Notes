@@ -80,4 +80,16 @@ when we run the comand i.e docker run, the docker cli reaches the docker hub and
 >***2. docker run busybox ls***
 >   - This command will show the list of files in cmd
 
-539 completed
+### Listing all running containers:
+
+***1. docker ps*** : This command will list all the running container.
+
+    To see the list of container running u must have some conatiner running below is the example of command which will make container running for long bit of time.
+    - docker run busybox ping google.com
+    This will ping to google and get the result and will be kept running for long period of timming.
+
+***2. docker ps --all***: This command will return the list of all the container ever runned.
+
+
+
+540 completed
