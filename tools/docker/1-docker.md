@@ -110,5 +110,10 @@ Then run ***dockeer start -a <container_id>*** to run the container.
 **NOTE** : we can't overide the default commant of already exited container.
 ![alt text](./assets/docker_restart.png)
 
+### To remove stopped containers:
+***docker system prune***: this will remove all the stopped container and also the download images and will free up the space.
 
-542 completed
+### Retrieving Output Logs: 
+***docker logs <container_id>***: this command will return the logs of the already exited container. Note: This command will not rerunning or restarting the container.
+
+544 completed
