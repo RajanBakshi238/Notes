@@ -102,5 +102,13 @@ when we run the comand i.e docker run, the docker cli reaches the docker hub and
 
 ***docker start -a <continaer_id>*** will run the container ***-a*** helps or makes docker watch for output from the container and print it out the terminal. By default ***docker start*** will only print the container id and output will be printed.
 
+### Restarting a stopped container :
+To run a container which is already exited , firstly run ***docker ps --all*** , which will return the details of all containers.
 
-540 completed
+Then run ***dockeer start -a <container_id>*** to run the container.
+
+**NOTE** : we can't overide the default commant of already exited container.
+![alt text](./assets/docker_restart.png)
+
+
+542 completed
