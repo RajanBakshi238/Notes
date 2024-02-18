@@ -91,5 +91,16 @@ when we run the comand i.e docker run, the docker cli reaches the docker hub and
 ***2. docker ps --all***: This command will return the list of all the container ever runned.
 
 
+### Container Lifecycle
+ > ***docker run*** is the addition of two command i.e ***docker create*** and ***docker start***
+
+![alt text](./assets/docker_run_internal.png)
+
+![alt text](./assets/docker_internal_explain.png)
+
+***docker create hello-world*** : This will create a container and will return the container id.
+
+***docker start -a <continaer_id>*** will run the container ***-a*** helps or makes docker watch for output from the container and print it out the terminal. By default ***docker start*** will only print the container id and output will be printed.
+
 
 540 completed
