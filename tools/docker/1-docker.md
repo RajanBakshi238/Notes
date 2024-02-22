@@ -116,4 +116,13 @@ Then run ***dockeer start -a <container_id>*** to run the container.
 ### Retrieving Output Logs: 
 ***docker logs <container_id>***: this command will return the logs of the already exited container. Note: This command will not rerunning or restarting the container.
 
-544 completed
+### Stopping Containers :
+For this We have two commands
+- ***docker stop <container_id>***
+- ***docker kill <container_id>***
+
+**docker stop :** This command will  stop the container after processing all the request and then it will close. **Note :** If container didn't get stopped in 10 Sec then it will automatically run ***docker kill*** command.
+
+**docker kill :** This command will instaneously stop the container forcefully without waiting for system process and saving processes.
+
+545 completed
