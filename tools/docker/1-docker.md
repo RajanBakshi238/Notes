@@ -140,4 +140,24 @@ For this We have two commands
 >***get myvalue*** (for getting value from myvalue variable)
 >
 
-547 completed
+### The purpose of it flag
+- When we are running docker in our machine every single container we are running is running inside a virtual machine running on linux. so these processes are being executed inside our linux world, even if we are o n **mac** or  **window**
+
+![alt text](./assets/linux_docker.png)
+
+**Explanation of above diagram:**      
+- Every proces we create in linux has three channels attached to it. These channels are used to communicate information in to the process or out of the process .
+    - STDIN : It is used to communicate infomation into the process.
+    - STDOUT : It is used to convey the information that is comming outside the process. This is redirected over to the our running terminal that is gone end up after showing the infomation to the screen.       
+    - STDERR: It conveys infomation out of the process that is like error in nature , so if redis-cli has some error that will be communicated outside the world over the standard error channel. 
+
+***Now what's the relation b/w __it__ flag***
+> The -it flag is combination of 2 different flags i.e ***-i*** and ***-t***      
+> ***-i :*** command means when we execute the new commands inside the container we want to attach our terminal to the **STDIN** channel of the new running process.     
+> ***-t :*** flag is that what makes the text look little bit preety,(In reality it's doing more then that) withou **-t** there is no indentation , no autocomplete it's just the raw information. 
+
+
+
+
+
+548 completed
