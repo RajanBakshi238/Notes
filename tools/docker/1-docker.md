@@ -156,8 +156,18 @@ For this We have two commands
 > ***-i :*** command means when we execute the new commands inside the container we want to attach our terminal to the **STDIN** channel of the new running process.     
 > ***-t :*** flag is that what makes the text look little bit preety,(In reality it's doing more then that) withou **-t** there is no indentation , no autocomplete it's just the raw information. 
 
+### Getting a command prompt in a container.
+To run command inside a container without everytime using ***docker exec*** again and again. we will use the command :  
+
+> ***docker exec -it <container_id> sh***   
+> After running this there is no need to run ***docker exec*** command again .
+
+**What is sh ?**
+![alt text](./assets/sh.png)
+
+**sh** is a name of program that is being executed inside of the container.  
+It is a command processor or shell , something that allow us to types command in and have them executed inside that containers.
 
 
 
-
-548 completed
+549 completed
