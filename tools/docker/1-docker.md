@@ -168,6 +168,21 @@ To run command inside a container without everytime using ***docker exec*** agai
 **sh** is a name of program that is being executed inside of the container.  
 It is a command processor or shell , something that allow us to types command in and have them executed inside that containers.
 
+### Starting with a shell :
 
+***docker run -it busybox sh :*** the downside to run this command with sh is that you can't run another process .
 
-549 completed
+### Creating docker images :
+![alt text](./assets/creating_docker.png)
+**Docker File :** is a plain text file that is going to have a couple of line of configurations inside of it . This configuation defines how our container should behave or specifically what different programs it's going to contain and what it does when it start's up as container.
+
+**Inside Every docker file we have following things:**
+![alt text](./assets/creating_dockerFile.png) 
+
+### Building a docker file
+In this we will create an image that runs **redis-server**
+[This project is available in this repo in docker > projects > redis-image]
+
+**Now run this run command ***docker build .*** from the file where it is place**
+
+554 completed
