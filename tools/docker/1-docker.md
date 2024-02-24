@@ -125,4 +125,19 @@ For this We have two commands
 
 **docker kill :** This command will instaneously stop the container forcefully without waiting for system process and saving processes.
 
-545 completed
+### Redis / (Executing commands in running containers) 
+***docker run redis :*** it will start  intance of container if available if not available then it will download and run it.
+
+![alt text](./assets/docker_container.png)
+
+>After running redis instance run the below command to use redis :
+>
+> ***docker exec -it <conatiner_id> redis-cli*** 
+>
+>now redis terminal get started
+>
+>***set myvalue 5*** (for setting value in myvalue variable)          
+>***get myvalue*** (for getting value from myvalue variable)
+>
+
+547 completed
