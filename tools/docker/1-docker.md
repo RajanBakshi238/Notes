@@ -208,4 +208,10 @@ Alpine base image has a set of programs inside it that are very useful for insta
 
 The command use to install redis is :  ***RUN apk add --update redis***. This is not the docker command and has nothing to do with docker. **apk** is appche packag manager that comes preinstalled on the **alpine** image that we can use this package manager built into alpine to automatically, download and install the redis for us.
 
-556 completed
+### The build process in Detail
+> will makes notes later [557]
+
+**Brief explaiation pic**
+![alt text](./assets/docker_build_brief.png)
+
+558 completed
