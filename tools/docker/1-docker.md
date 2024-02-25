@@ -222,13 +222,26 @@ we build image from docker file using ***docker build .*** command which in retu
 
 so we can change the process of creating conatianer using image id of our custom image with the slightly different syntax called **tagging**
 
-![alt text](./assets//docker_tagging.png)
+![alt text](./assets/docker_tagging.png)
 
 **Below is the syntax explanation**
 
-![alt text](./assets//tagging_explanation.png)
+![alt text](./assets/tagging_explanation.png)
 
 to run the image after tagging the command is :   
- ***docker run docker.io/varunbakshi238/redis:lastest***
+***docker run docker.io/varunbakshi238/redis:lastest***
 
-559 completed
+### Manual Image Generation with docker commit (JUST FOR KNOWLEDGE / INTERESTED TO KNOW)
+we know we use **Image** to build container , but previously we see that can also use container to build image, so basically we can manually make container run some commands inside of it and change file system inside it and generates some useful image and can use it some future point of time. 
+```
+    Series of commands to achieve this is :
+    1. docker run -it alpine sh  // this will starts the command line or prompt inside the alpine image container
+    2. apk add --update redis
+    3. docker ps  // to get the id of running alpine container
+    4. docker commit -c 'CMD ["redis-server"]' <container_id>
+    5. docker run <image_id> // id we get from the result of previous command    
+
+```
+
+
+562 completed
