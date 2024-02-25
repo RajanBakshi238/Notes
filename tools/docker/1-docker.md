@@ -177,6 +177,7 @@ It is a command processor or shell , something that allow us to types command in
 **Docker File :** is a plain text file that is going to have a couple of line of configurations inside of it . This configuation defines how our container should behave or specifically what different programs it's going to contain and what it does when it start's up as container.
 
 **Inside Every docker file we have following things:**
+
 ![alt text](./assets/creating_dockerFile.png) 
 
 ### Building a docker file
@@ -185,4 +186,26 @@ In this we will create an image that runs **redis-server**
 
 **Now run this run command ***docker build .*** from the file where it is place**
 
-554 completed
+### Dockerfile teardown (i.e explaining what we have done above to make docker file)
+![alt text](./assets/docker_file_create_cmd.png)
+
+### Base image :
+    To understand this firtly we'll see the lit bit of analogy i.e
+    writing a docker file is just similar to being a computer with no os and being told to install chrome.
+
+![alt text](./assets/os_relative_to_baseImage.png)
+
+By default when we create an image we have an empty image, there is nothing there.  
+So the purpose of specifying the base image is a kind of give us intial starting point or intial set of programs we can used to further customize. [THAT IS THE PURPOSE OF FIRST LINE I.E FROM alpine]
+i.e we say we want to use the **Alpine** docker image as kind of intial operating system or a starting point for the image we are creating
+
+**Why did we use alpine ?**
+![alt text](./assets/answer_why_alpine.png)
+
+In short , we just made use of alpine as a base image as kind of like an operating system, becuse it includes differrent set of programs that is very useful for what we want to accomplished i.e we are trying to install and run **redis**.
+
+Alpine base image has a set of programs inside it that are very useful for installing and running redis.
+
+The command use to install redis is :  ***RUN apk add --update redis***. This is not the docker command and has nothing to do with docker. **apk** is appche packag manager that comes preinstalled on the **alpine** image that we can use this package manager built into alpine to automatically, download and install the redis for us.
+
+556 completed
