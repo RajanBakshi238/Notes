@@ -214,4 +214,21 @@ The command use to install redis is :  ***RUN apk add --update redis***. This is
 **Brief explaiation pic**
 ![alt text](./assets/docker_build_brief.png)
 
-558 completed
+### Rebuilds with cache :
+Docker behinds the scene uses cache mechanism while building image which will make it more performant. - [559]
+
+### Tagging an image :
+we build image from docker file using ***docker build .*** command which in returns gives **image id**. we create the container of the created image with the help of the image id we get using the command ***docker run <image_id>***  
+
+so we can change the process of creating conatianer using image id of our custom image with the slightly different syntax called **tagging**
+
+![alt text](./assets//docker_tagging.png)
+
+**Below is the syntax explanation**
+
+![alt text](./assets//tagging_explanation.png)
+
+to run the image after tagging the command is :   
+ ***docker run docker.io/varunbakshi238/redis:lastest***
+
+559 completed
