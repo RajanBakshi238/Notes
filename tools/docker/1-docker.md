@@ -246,7 +246,25 @@ we know we use **Image** to build container , but previously we see that can als
 
 Nodejs app name **simpleweb** is placed at tools > docker > projects > simpleweb
 
+![alt text](./assets/docker-simple-web-app.png)
 
+```
+FROM node:alpine // code line from simpleweb
+Here ALPINE is not the base image, basically alpine is a term in a docker world for an image which is small and compatible, so we can say alpine is version of image.
+ 
+```
 
+### A Few Missing Files :
+![alt text](./assets/package-json-missing.png)
 
-564 completed
+In above simple app as per diagram we will get error at npm  install as package.json file is not found becaue in container only **Node** image is there. That is other files are completely segmented of i.e they are complpetely available, so now we have to make available the **package.json** available in the container.
+
+### Copy build files :
+To solve above problem i.e using  package.json file inside docker file we will use **COPY** command.
+![alt text](./assets/copy-command.png)
+
+Here first path is relative to the build context which is **simpleweb** project and second path is of container.
+
+Here it simply defines to copy the fils from relative directory path to docker file.
+
+567 completed
