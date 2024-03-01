@@ -267,4 +267,15 @@ Here first path is relative to the build context which is **simpleweb** project 
 
 Here it simply defines to copy the fils from relative directory path to docker file.
 
+### Container port forwarding
+After all above steps and even after running it you will get error **The site can't be reached**.
+
+![alt text](./assets/whyPortForwarding.png)
+
+in this all the request coming to localhost can't react to the container, but vice versa is possible i.e docker container can reach outside the world to perform the operations like above **npm install**. so to acheive the way to reach the container port from localhost we need to use the concept **Port Forwarding** ,while using **docker run command**.
+ 
+**Port forwarding** is not a change going to make to the docker file, we donot set portforwarding inside the docker file, portforwarding stuff is strictly a run time constraints
+
+![alt text](./assets/port-forwarding.png)
+
 569 completed
