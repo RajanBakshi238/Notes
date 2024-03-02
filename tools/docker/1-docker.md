@@ -278,4 +278,27 @@ in this all the request coming to localhost can't react to the container, but vi
 
 ![alt text](./assets/port-forwarding.png)
 
+### Specifying a working directory
+
+***docker run -it docker.io/rajanbakshi/simpleweb sh*** : This command will start the shell with the help of which we can run commands in the container.   
+Inside of this with help of command ***ls*** we can print all the files and folders. In the root directory we will find the projects files are placed along the other files of containers.   
+This situatiion is definately not good because we can accidentally override the files and folder with the existing one inside the container.
+
+To resolve this issue we will change litle bit in the docker file and rather then copying everything directly into the root project directory, we will copy it into nested directory instead 
+Below command is used to copy the project in nested directory.
+![alt text](./assets/workdir_command.png)
+
+After adding run this run command to build:
+***docker build -t docker.io/rajanbakshi/simpleweb .***
+
+To start the container run the command:
+***docker run -p 8080:8080 docker.io/rajanbakshi/simpleweb***
+
+To see the file structure run following command to see file structure.
+```
+    docker ps // to get list of all container
+    docker exec -it <container_id> sh
+```
+
+
 569 completed
