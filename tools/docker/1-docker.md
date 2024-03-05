@@ -301,4 +301,7 @@ To see the file structure run following command to see file structure.
 ```
 
 
+### Summary of commands:
+![alt text](./assets/cmds_summary.png)
+
 569 completed
